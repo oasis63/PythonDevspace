@@ -2,3 +2,4 @@ torch
 requests
 transformers
 pymilvus
+seaborn
