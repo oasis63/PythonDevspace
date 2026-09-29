@@ -1,4 +1,8 @@
+from functools import wraps
+
+
 def to_upper(fun1):
+    @wraps(fun1)
     def inner():
         return fun1().upper()
 
@@ -6,6 +10,7 @@ def to_upper(fun1):
 
 
 def add_excl(fun1):
+    @wraps(fun1)
     def proce():
         return fun1() + "!"
 
@@ -21,11 +26,6 @@ def my_method():
 
 print(my_method())
 
-print(my_method.__name__)  # should be my_method , but we got inner
-print(my_method.__doc__)  # should be "says hello", but we got Nonne
-
-
-"""
-when we write a decorator, it replaces the original function-- and loses it's metadata
-
-"""
+print(my_method.__name__)
+print(my_method.__doc__)
+print(my_method.__module__)
