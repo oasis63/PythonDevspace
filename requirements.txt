@@ -3,3 +3,5 @@ requests
 transformers
 pymilvus
 seaborn
+
+httpx
